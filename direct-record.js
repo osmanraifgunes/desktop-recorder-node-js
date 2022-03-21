@@ -11,13 +11,16 @@ var args = ['-y', '-f', 'image2pipe',
     '-vcodec', 'mpeg4',
     'video.avi'
 ];
+var captureInterval = 10;
 var proc = spawn(cmd, args);
 imagesStream.pipe(proc.stdin);
 
 var saver = function () {
     screenshot().then(function (img) {
         imagesStream.write(img, 'utf8');
-        saver();
+        setTimeout(() => {
+            saver();
+        }, captureInterval);
     }).catch((err) => {
         debugger;
     })
