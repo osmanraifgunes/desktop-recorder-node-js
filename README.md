@@ -1,5 +1,7 @@
 # desktop-recorder-node-js
 
+Simple screen recorder using screenshot images. 
+
 Dependencies : **ffmpeg**, **node 10+** and **https://www.npmjs.com/package/screenshot-desktop**
 
 **node direct-record.js** to record local file.
